@@ -17,6 +17,10 @@ Create `.env.local`:
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=your-project-url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+
+# Recommended for server-side dashboard queries in production
+SUPABASE_URL=your-project-url
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 ```
 
 ### Run
@@ -26,4 +30,5 @@ npm run dev
 ```
 
 ### Deploy
-Deploy directly on Vercel; set the same env vars in project settings.
+Deploy directly on Vercel. For production server-side access, set `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` (recommended).
+You can keep `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` for any client-side calls.
